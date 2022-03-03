@@ -1,5 +1,9 @@
 package com.company;
 
+/**
+ * @author nmekina
+ * speichert ein Datum
+ */
 public class Date {
     int day, mon, year;
 

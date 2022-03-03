@@ -1,5 +1,9 @@
 package com.company;
 
+/**
+ * @author nmekina
+ * speichert eine Telefonnummer
+ */
 public class PhoneNumber {
     int country, areacode, number;
 
