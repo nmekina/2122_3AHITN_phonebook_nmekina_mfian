@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 
@@ -9,11 +10,14 @@ import java.io.Writer;
  */
 public class StreamOperation {
 
-    void ToStream(Writer w, Person p) {
-        System.out.println();
+    public void ToStream(Writer w, Person p) throws IOException {
+        w.write(p.toString());
     }
 
-    Person fromStream(Reader r) {
+    public Person fromStream(Reader r) throws IOException {
+        for (int i = r.read(); i != -1; i = r.read()) {
+            System.out.print((char) i);
+        }
         PhoneNumber pn = new PhoneNumber("0823874");
         Date d = new Date("04043033");
         Person p = new Person("Nico", "Mekina", d, pn);

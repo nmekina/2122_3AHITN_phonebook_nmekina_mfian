@@ -2,7 +2,7 @@ package com.company;
 
 /**
  * @author nmekina
- * speichert Daten zu einer bestimmten Person
+ * speichert Daten zu einer bestimmten< Person
  */
 public class Person {
     String name, givenname, nickname;

@@ -6,14 +6,17 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         File file = new File("C:\\Users\\nicom\\2122_3AHITN_phonebook_nmekina_mfian\\src\\com\\company\\Telefonbuch.csv");
-        FileReader fileReader = new FileReader(file);
-        FileWriter fileWriter = new FileWriter(file);
+        Reader reader = new FileReader(file);
+        Writer writer = new FileWriter(file);
 
-        int i;
-        while ((i=fileReader.read()) != -1) {
-            System.out.print((char)i);
-        }
+        StreamOperation streamOperation = new StreamOperation();
+        Date date = new Date(7, 4, 2005);
+        PhoneNumber phoneNumber = new PhoneNumber(43, 676, 3519192);
+        Person person = new Person("Nico", "Mekina", date, phoneNumber);
+        streamOperation.fromStream(reader);
+        streamOperation.ToStream(writer, person);
 
-        fileReader.close();
+        writer.close();
+        reader.close();
     }
 }
