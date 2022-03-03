@@ -18,5 +18,4 @@ public class IllegalPhoneNumberException {
         this.STRING_FORMAT_ILLEGAL = STRING_FORMAT_ILLEGAL;
     }
 
-
 }

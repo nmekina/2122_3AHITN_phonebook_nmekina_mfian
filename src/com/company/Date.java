@@ -1,5 +1,9 @@
 package com.company;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 /**
  * @author nmekina
  * speichert ein Datum
@@ -34,6 +38,14 @@ public class Date {
     }
 
     boolean isValid(Date d) {
-        return true;
+
+        //String;  Datum von IllegalDateException
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu");
+        try {
+            LocalDate ld = LocalDate.parse(input, f);
+            System.out.println("ld: " + ld);
+        } catch (DateTimeParseException e) {
+            System.out.println("ERROR: " + e);
+        }
     }
 }
