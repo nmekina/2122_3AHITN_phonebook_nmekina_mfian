@@ -38,8 +38,8 @@ public class Date {
     }
 
     boolean isValid(Date d) {
-
-        String input = "31/02/2000";
+        //String input = "31/02/2000";
+        String input = d.day + "/" + d.mon + "/" + d.year;
         DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu");
         try {
             LocalDate ld = LocalDate.parse(input, f);
@@ -47,5 +47,6 @@ public class Date {
         } catch (DateTimeParseException e) {
             System.out.println("ERROR: " + e);
         }
+        return true;
     }
 }
