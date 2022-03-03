@@ -39,7 +39,7 @@ public class Date {
 
     boolean isValid(Date d) {
 
-        //String;  Datum von IllegalDateException
+        String input = "31/02/2000";
         DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu");
         try {
             LocalDate ld = LocalDate.parse(input, f);
