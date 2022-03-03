@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- Autor: mfian
+ * @author mfian
  */
 public class IllegalDateException {
     int type;
