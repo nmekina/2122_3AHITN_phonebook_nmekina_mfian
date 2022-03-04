@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author nmekina
  * speichert eine Telefonnummer
@@ -29,9 +32,26 @@ public class PhoneNumber {
         return number;
     }
 
-    boolean isValid(PhoneNumber b) {
+    public boolean isValid(String s) {
+        Pattern p = Pattern.compile("/(?:\\(\\+?\\d+\\)|\\+?\\d+)(?:\\s*[\\-\\/]*\\s*\\d+)+/");
+        Matcher m = p.matcher(s);
+        if (m.find()){
+            System.out.printf(m.group());
+        }
         return true;
-    }
+
+/*
+        for (int i = 0; i < numbers.length; i++) {
+            String phoneNumber=numbers[i];
+            //nur für test
+            if (isValid(phoneNumber))
+                System.out.print(phoneNumber+" ist telenummer");
+            else
+                System.out.print(phoneNumber+" keine telenummer");
+
+ */
+        }
+
 
     @Override
     public String toString() {
@@ -40,5 +60,6 @@ public class PhoneNumber {
                 ", areacode=" + areacode +
                 ", number=" + number +
                 '}';
+
     }
 }
