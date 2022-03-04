@@ -1,8 +1,7 @@
 package com.company;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
+import java.util.stream.Collectors;
 
 /**
  * @author nmekina
@@ -12,15 +11,22 @@ public class StreamOperation {
 
     public void ToStream(Writer w, Person p) throws IOException {
         w.write(p.toString());
+        w.close();
     }
 
     public Person fromStream(Reader r) throws IOException {
-        for (int i = r.read(); i != -1; i = r.read()) {
-            System.out.print((char) i);
+        BufferedReader br = new BufferedReader(r);
+        if (!(br.read()>0)){
+            System.out.println("NULL");
+            return null;
         }
-        PhoneNumber pn = new PhoneNumber("0823874");
-        Date d = new Date("04043033");
-        Person p = new Person("Nico", "Mekina", d, pn);
+        String[] s = br.readLine().split(";");
+
+        PhoneNumber pn = new PhoneNumber(s[4].toString());
+        Date d = new Date(s[3].toString());
+        Person p = new Person(s[0], s[1], s[2], d, pn);
+        System.out.println(p.toString());
+
         return p;
     }
 }

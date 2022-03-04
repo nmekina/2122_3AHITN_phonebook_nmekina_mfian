@@ -1,5 +1,8 @@
 package com.company;
 
+import com.sun.jdi.IntegerValue;
+
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -18,7 +21,10 @@ public class Date {
     }
 
     public Date(String date) {
-
+        String[] s = date.split(".");
+        this.day = Integer.parseInt(s[0]);
+        this.mon = Integer.parseInt(s[1]);
+        this.year = Integer.parseInt(s[2]);
     }
 
     public int getDay() {
@@ -48,5 +54,10 @@ public class Date {
             System.out.println("ERROR: " + e);
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return day + ";" + mon + ";" + year;
     }
 }
