@@ -32,19 +32,24 @@ public class PhoneNumber {
         return number;
     }
 
-    public static boolean isValid(String s) {
-        Pattern p = Pattern.compile("^\\+(?:[0-9] ?){6,14}[0-9]$");
+    public boolean isValid(String s) {
+        Pattern p = Pattern.compile("/(?:\\(\\+?\\d+\\)|\\+?\\d+)(?:\\s*[\\-\\/]*\\s*\\d+)+/");
         Matcher m = p.matcher(s);
-        return (m.find() && m.group().equals(s));
+        if (m.find()){
+            System.out.printf(m.group());
+        }
+        return true;
 
-        String phoneNumbers = country + areacode + number;
-
-        for (int i = 0; i < phoneNumbers.length; i++) {
-            String phoneNumber=phoneNumbers[i];
+/*
+        for (int i = 0; i < numbers.length; i++) {
+            String phoneNumber=numbers[i];
+            //nur für test
             if (isValid(phoneNumber))
                 System.out.print(phoneNumber+" ist telenummer");
             else
                 System.out.print(phoneNumber+" keine telenummer");
+
+ */
         }
 
 

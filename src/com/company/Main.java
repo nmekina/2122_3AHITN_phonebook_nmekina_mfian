@@ -5,6 +5,14 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+
+/*
+testen von isvalid phonenumber
+
+        PhoneNumber phoneNumber = new PhoneNumber("+43 677/615774+84");
+        System.out.println(phoneNumber.isValid("+43 677/615774+84"));
+ */
+
         File file = new File("C:\\Users\\nicom\\2122_3AHITN_phonebook_nmekina_mfian\\src\\com\\company\\Telefonbuch.csv");
         Reader reader = new FileReader(file);
         Writer writer = new FileWriter(file);
@@ -18,5 +26,7 @@ public class Main {
 
         writer.close();
         reader.close();
+
+
     }
 }
