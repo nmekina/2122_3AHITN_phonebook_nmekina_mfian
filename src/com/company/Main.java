@@ -10,7 +10,7 @@ public class Main {
         Writer writer = new FileWriter(file);
 
         StreamOperation streamOperation = new StreamOperation();
-        Date date = new Date(7, 4, 2005);
+        Date date = new Date(2, 9, 1945);
         PhoneNumber phoneNumber = new PhoneNumber(43, 676, 3519192);
         Person person = new Person("Nico", "Mekina", date, phoneNumber);
         streamOperation.fromStream(reader);
