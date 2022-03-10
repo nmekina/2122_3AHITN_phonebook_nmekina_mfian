@@ -3,15 +3,18 @@ package com.company;
 /**
  * @author mfian
  */
-public class IllegalDateException {
+public class IllegalDateException extends Exception{
     int type;
-    int DAY_ILLEGAL;
-    int MON_ILLEGAL;
+    public static final int DAY_ILLEGAL = 1;
+    public static final int MON_ILLEGAL = 2;
 
-    public IllegalDateException(int type, int DAY_ILLEGAL, int MON_ILLEGAL) {
+    public IllegalDateException(int type) {
         this.type = type;
-        this.DAY_ILLEGAL = DAY_ILLEGAL;
-        this.MON_ILLEGAL = MON_ILLEGAL;
+        if (this.type == DAY_ILLEGAL) {
+            System.out.println("Illegaler Tag!!!!");
+        } else if (this.type == MON_ILLEGAL) {
+            System.out.println("Illegaler Monat!!!!");
+        }
     }
 
 }

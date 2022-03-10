@@ -3,19 +3,24 @@ package com.company;
 /**
  * @author mfian
  */
-public class IllegalPhoneNumberException {
+public class IllegalPhoneNumberException extends Exception{
     int type;
-    int COUNTRY_ILLEGAL;
-    int AREA_ILLEGAL;
-    int NUMBER_ILLEGAL;
-    int STRING_FORMAT_ILLEGAL;
+    public static final int COUNTRY_ILLEGAL = 1;
+    public static final int AREA_ILLEGAL = 2;
+    public static final int NUMBER_ILLEGAL = 3;
+    public static final int STRING_FORMAT_ILLEGAL = 4;
 
-    public IllegalPhoneNumberException(int type, int COUNTRY_ILLEGAL, int AREA_ILLEGAL, int NUMBER_ILLEGAL, int STRING_FORMAT_ILLEGAL) {
+    public IllegalPhoneNumberException(int type) {
         this.type = type;
-        this.COUNTRY_ILLEGAL = COUNTRY_ILLEGAL;
-        this.AREA_ILLEGAL = AREA_ILLEGAL;
-        this.NUMBER_ILLEGAL = NUMBER_ILLEGAL;
-        this.STRING_FORMAT_ILLEGAL = STRING_FORMAT_ILLEGAL;
+        if (this.type == COUNTRY_ILLEGAL) {
+            System.out.println("Illegale country!!!!");
+        } else if (this.type == AREA_ILLEGAL) {
+            System.out.println("Illegale area!!!!");
+        } else if (this.type == NUMBER_ILLEGAL) {
+            System.out.println("Illegale Nummer!!!!");
+        } else if (this.type == STRING_FORMAT_ILLEGAL) {
+            System.out.println("Illegales String-Format!!!!");
+        }
     }
 
 }
